@@ -21,7 +21,7 @@ function App() {
 
     try {
       const response = await fetch(
-        'http://localhost:8080/api/email/check',
+        'https://mailguard-2r70.onrender.com/api/email/check',
         {
           method: 'POST',
           headers: {
