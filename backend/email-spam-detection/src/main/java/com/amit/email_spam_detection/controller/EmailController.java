@@ -1,14 +1,23 @@
 
 package com.amit.email_spam_detection.controller;
 
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
 import com.amit.email_spam_detection.dto.EmailRequest;
 import com.amit.email_spam_detection.dto.SpamCheckResponse;
 import com.amit.email_spam_detection.service.EmailService;
+
 import jakarta.validation.Valid;
-import org.springframework.web.bind.annotation.*;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:5175")
+@CrossOrigin(origins = {
+    "http://localhost:5175",
+    "https://mail-guard-eight.vercel.app"
+})
 public class EmailController {
 
     private final EmailService emailService;
